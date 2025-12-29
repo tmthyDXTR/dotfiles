@@ -1,0 +1,305 @@
+{
+    // ============================================
+    // EDITOR SETTINGS
+    // ============================================
+    "editor.accessibilitySupport": "off",
+    // "editor.background": "#222222",
+    "editor.codeLensFontFaily": "'Ubuntu Mono', monospace",
+    "editor.fontFamily": "'Ubuntu Mono', monospace",
+    // "editor.fontFamily": "'Modern DOS 8x16', monospace",
+    "editor.fontWeight": "400",
+    "editor.fontSize": 18,
+    "editor.renderLineHighlight": "all",
+    "editor.stickyScroll.enabled": false,
+    "editor.unicodeHighlight.nonBasicASCII": false,
+    "editor.wordWrap": "on",
+    "editor.lineNumbers": "relative",
+    "workbench.activityBar.location": "hidden",
+    "workbench.layoutControl.enabled": false,
+    "workbench.statusBar.visible": true,
+    "workbench.tree.indent": 16,
+    "workbench.preferredLightColorTheme": "WinClassic",
+    "workbench.preferredDarkColorTheme": "Visual Studio 2019 Dark",
+    "workbench.colorCustomizations": {
+        // // Backgrounds & surfaces
+        // "editor.background": "#222222",
+        // "sideBar.background": "#222222",
+        // "sideBar.foreground": "#d0d0d0",
+        // "activityBar.background": "#1b1b1b",
+        // "activityBar.foreground": "#d0d0d0",
+        // "activityBarBadge.background": "#FF5700",
+        // "panel.background": "#1b1b1b",
+        // "panel.border": "#2b2b2b",
+        "statusBar.background": "#151515",
+        "statusBar.foreground": "#cfcfcf",
+        "titleBar.activeBackground": "#151515",
+        "titleBar.activeForeground": "#cfcfcf",
+        // // Editor & text
+        // "editor.foreground": "#e6e6e6",
+        // "editorLineNumber.foreground": "#6a6a6a",
+        // "editorLineNumber.activeForeground": "#ffffff",
+        // "editorCursor.foreground": "#FFD600",
+        // "editor.selectionBackground": "#214283",
+        // "editor.selectionHighlightBackground": "#34587d80",
+        // "editor.wordHighlightBackground": "#2b4b6a60",
+        // "editor.wordHighlightStrongBackground": "#2b4b6a80",
+        // "editor.findMatchBackground": "#ffd33d44",
+        // "editor.findMatchHighlightBackground": "#ffd33d22",
+        // "editor.lineHighlightBackground": "#222222",
+        // "editor.lineHighlightBorder": "#6a6a6a",
+        // "editorBracketMatch.border": "#ffffff",
+        // "editorBracketMatch.background": "#333333",
+        // "editorOverviewRuler.border": "#2b2b2b",
+        // "editorError.foreground": "#ff6b6b",
+        // "editorWarning.foreground": "#ffb86b",
+        // "editorInfo.foreground": "#5ccfe6",
+        // // Suggestions
+        // // "editorGhostText.foreground": "#7A7A7A",            // inline ghost text color
+        // // "editorGhostText.background": "#00000000",          // optional transparent background
+        // // "editorSuggestWidget.background": "#1E1E1E",
+        // // "editorSuggestWidget.border": "#3C3C3C",
+        // // "editorSuggestWidget.foreground": "#7A7A7A",
+        // // "editorSuggestWidget.highlightForeground": "#C586C0",
+        // // "editorSuggestWidget.selectedBackground": "#094771",
+        // // "editorSuggestWidget.selectedForeground": "#FFFFFF",
+        // // "editorSuggestWidget.selectedIconForeground": "#FFFFFF",
+        // // Gutter & guides
+        // "editorGutter.background": "#222222",
+        // "editorGutter.addedBackground": "#73c990",
+        // "editorGutter.modifiedBackground": "#ffd86b",
+        // "editorGutter.deletedBackground": "#ff6b6b",
+        // "editorIndentGuide.background1": "#3a3a3a",
+        // "editorIndentGuide.activeBackground1": "#ffffff",
+        // // Lists, trees, and explorer
+        // "list.hoverBackground": "#1f2a3a",
+        // "list.activeSelectionBackground": "#214283",
+        // "list.activeSelectionForeground": "#ffffff",
+        // "list.inactiveSelectionBackground": "#19314a",
+        // "list.inactiveSelectionForeground": "#dcdcdc",
+        // "list.focusBackground": "#214283",
+        // "list.dropBackground": "#2b3b55",
+        // // Buttons, inputs, quick pick
+        // "button.background": "#2b6f47",
+        // "button.foreground": "#ffffff",
+        // "button.hoverBackground": "#3aa86a",
+        // "input.background": "#1e1e1e",
+        // "input.foreground": "#e6e6e6",
+        // "input.placeholderForeground": "#8a8a8a",
+        // // Badges and activity badges
+        // "badge.background": "#FF5700",
+        // "badge.foreground": "#111111",
+        // // Peek / quick open / find
+        // "peekViewEditor.background": "#1b1b1b",
+        // "peekViewEditorGutter.background": "#1b1b1b",
+        // "peekViewResult.background": "#151515",
+        // // Debug & panel
+        // "debugToolBar.background": "#161616",
+        // "debugConsole.infoForeground": "#5ccfe6",
+        // // Terminal
+        // "terminal.background": "#0f0f0f",
+        // "terminal.foreground": "#e6e6e6",
+        // "terminalCursor.background": "#000000",
+        // "terminalCursor.foreground": "#FFFFFF",
+        // "terminal.ansiBlack": "#000000",
+        // "terminal.ansiRed": "#ff6b6b",
+        // "terminal.ansiGreen": "#73c990",
+        // "terminal.ansiYellow": "#ffd86b",
+        // "terminal.ansiBlue": "#5ccfe6",
+        // "terminal.ansiMagenta": "#c678dd",
+        // "terminal.ansiCyan": "#56b6c2",
+        // "terminal.ansiWhite": "#e6e6e6",
+        // "terminal.ansiBrightBlack": "#7f8c8d",
+        // "terminal.ansiBrightRed": "#ff8787",
+        // "terminal.ansiBrightGreen": "#9be6b4",
+        // "terminal.ansiBrightYellow": "#ffe59e",
+        // "terminal.ansiBrightBlue": "#9fe8ff",
+        // "terminal.ansiBrightMagenta": "#e2baf6",
+        // "terminal.ansiBrightCyan": "#9ff0f5",
+        // "terminal.ansiBrightWhite": "#ffffff",
+        // // Git decorations and scm
+        // "gitDecoration.modifiedResourceForeground": "#ffd86b",
+        // "gitDecoration.deletedResourceForeground": "#ff6b6b",
+        // "gitDecoration.untrackedResourceForeground": "#73c990",
+        // // Notifications
+        // "notification.background": "#1b1b1b",
+        // "notification.foreground": "#e6e6e6",
+        // "notification.infoBackground": "#1b1b1b",
+        // // Peek view and editors
+        // "editor.rangeHighlightBackground": "#2b4b6a30",
+        // "editor.snippetTabstopHighlightBackground": "#2b4b6a80",
+        // // Workbench specific
+        // "panelTitle.activeBorder": "#FF5700",
+        // // Misc
+        // "focusBorder": "#FF5700",
+        // "contrastActiveBorder": "#444444",
+        // // Keep your custom overrides from before
+        // "chat.background": "#222222",
+        // "editorWhitespace.foreground": "#FF5700"
+    },
+    // ============================================
+    // WORKBENCH EDITOR
+    // ============================================
+    "workbench.editor.autoLockGroups": {
+        "vscode.videoPreview": true
+    },
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.openSideBySideDirection": "down",
+    "workbench.editor.showTabIndex": true,
+    "workbench.editor.showTabs": "single",
+    "editor.cursorStyle": "block",
+    // ============================================
+    // WINDOW
+    // ============================================
+    "window.commandCenter": false,
+    "window.menuBarVisibility": "toggle",
+    "window.newWindowProfile": "Default",
+    // ============================================
+    // TERMINAL
+    // ============================================
+    "terminal.integrated.fontFamily": "'Ubuntu Mono', monospace",
+    "terminal.integrated.fontSize": 18,
+    // Shell integration for interactive terminal features
+    "terminal.integrated.shellIntegration.enabled": true,
+    // Enable suggestions from terminal output (makes paths/files clickable/selectable)
+    "terminal.integrated.suggest.enabled": true,
+    // Enable terminal link detection (Ctrl+Click on paths to open)
+    "terminal.integrated.enableFileLinks": "on",
+    // Send keybindings to VS Code instead of terminal shell
+    "terminal.integrated.sendKeybindingsToShell": false,
+    // ============================================
+    // SEARCH
+    // ============================================
+    "search.mode": "reuseEditor",
+    "search.searchEditor.defaultNumberOfContextLines": 0,
+    "search.searchEditor.reusePriorSearchConfiguration": true,
+    // ============================================
+    // EXPLORER
+    // ============================================
+    "explorer.openEditors.visible": 1,
+    // ============================================
+    // DEBUG & OUTPUT
+    // ============================================
+    "debug.console.fontFamily": "'Ubuntu Mono', monospace",
+    "debug.console.fontSize": 18,
+    "output.fontSize": 20,
+    "problems.fontSize": 20,
+    // ============================================
+    // COMMAND LOGGING
+    // ============================================
+    // Logs all executed commands to the VS Code log files
+    // View logs: Help > Open Logs Folder, then check the 'window' folder
+    // Or use Developer: Show Logs... command to access specific log files
+    "dev.containers.logLevel": "trace",
+    // ============================================
+    // MARKDOWN
+    // ============================================
+    "markdown.preview.fontFamily": "-apple-system, BlinkMacSystemFont, 'Ubuntu Mono', 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif",
+    // ============================================
+    // FORMATTING
+    // ============================================
+    "prettier.tabWidth": 4,
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    // ============================================
+    // SPELLING
+    // ============================================
+    "cSpell.dictionaryDefinitions": [],
+    "cSpell.enabled": true,
+    "cSpell.language": "en,de-DE,de",
+    // ============================================
+    // CHAT / AI
+    // ============================================
+    "chat.fontSize": 15,
+    "chat.fontFamily": "Ubuntu Mono",
+    "chat.tools.terminal.autoApprove": {
+        "rm": true,
+        "./noty": true,
+        "Move-Item": true,
+        "npx": true,
+        "code": true,
+        "npm install": true,
+        "npm run compile": true,
+        "/^node -e \"console\\.log\\(require\\('\\./out/src/provider\\.js'\\)\\.DiredProvider\\)\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^node -e \"require\\('fs'\\)\\.statSync\\('\\./out/src/extension\\.js'\\); console\\.log\\('compiled ok'\\)\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^git -C \"c:\\\\Users\\\\Micha\\\\gamedev\\\\god\" log -5 --date=short --pretty=format:\"%h %ad %an - %s\" --name-status$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^git -C \"c:\\\\Users\\\\Micha\\\\gamedev\\\\god\\\\Assets\" log -10 --date=short --pretty=format:\"%h %ad %an - %s\" --name-status$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "npm run build": true,
+        "rg": true,
+        ".\\backend\\ContentIndexer\\ContentIndexer.csproj": true,
+        "npm run lint": true,
+        "/^node \\./out/test/runTest\\.js$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "npm test": true
+    },
+    // ============================================
+    // GIT & SECURITY
+    // ============================================
+    "git.openRepositoryInParentFolders": "always",
+    "security.workspace.trust.untrustedFiles": "open",
+    // ============================================
+    // OTHER
+    // ============================================
+    "workbench.settings.applyToAllProfiles": ["cSpell.language"],
+    "zenMode.restore": false,
+    "workbench.editor.empty.hint": "hidden",
+    "terminal.integrated.stickyScroll.enabled": false,
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "workbench.startupEditor": "terminal",
+    // Add semantic token color customizations (for languages that use semantic tokens)
+    "editor.semanticTokenColorCustomizations": {
+        "enabled": true
+        // "rules": {
+        //     "variable": "#FFFFFF",
+        //     "variable.readonly": "#9fe8ff",
+        //     "parameter": "#FF8700"
+    },
+    // Ensure semantic highlighting is enabled so semantic rules apply
+    "editor.semanticHighlighting.enabled": true,
+    "dired.fixed_window": true,
+    "editor.minimap.enabled": false,
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "dired.ask_directory": true,
+    "dired.show_path_in_tab": true,
+    "debug.onTaskErrors": "debugAnyway",
+    "security.allowedUNCHosts": ["wsl.localhost"],
+
+    "breadcrumbs.enabled": true,
+    "breadcrumbs.filePath": "off",
+    "breadcrumbs.symbolPath": "on",
+    "search.showLineNumbers": true,
+    "github.copilot.chat.anthropic.tools.websearch.enabled": true,
+    "github.copilot.chat.codesearch.enabled": true,
+    "workbench.colorTheme": "Visual Studio 2019 Dark",
+    "chat.agent.maxRequests": 50,
+    "chat.viewSessions.enabled": false,
+    "extensions.ignoreRecommendations": true
+}

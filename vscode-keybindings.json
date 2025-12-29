@@ -1,0 +1,733 @@
+// ============================================
+// CUSTOM KEYBINDINGS
+// ============================================
+// Format: Positive bindings first, then disabled defaults (with - prefix)
+// Organize by: Context/Feature area
+// ============================================
+
+[
+    // ========================================
+    // EMACS-STYLE EDITING (KILL/YANK)
+    // ========================================
+
+    // C-w - Kill region (cut)
+    {
+        "key": "ctrl+w",
+        "command": "editor.action.clipboardCutAction",
+        "when": "!dired.open && editorTextFocus && !editorReadonly || workbench.panel.chat.view.copilot.active"
+    },
+
+    // M-w - Copy region (Alt+W)
+    {
+        "key": "alt+w",
+        "command": "editor.action.clipboardCopyAction",
+        "when": "!dired.open && (editorTextFocus || workbench.panel.chat.view.copilot.active)"
+    },
+
+    // C-y - Yank (paste)
+    {
+        "key": "ctrl+y",
+        "command": "editor.action.clipboardPasteAction",
+        "when": "editorTextFocus && !editorReadonly || workbench.panel.chat.view.copilot.active"
+    },
+
+    // Disable default Ctrl+W (close window) in editor
+    {
+        "key": "ctrl+w",
+        "command": "-workbench.action.closeWindow",
+        "when": "editorTextFocus"
+    },
+
+    // ========================================
+    // EMACS-STYLE FILE OPERATIONS
+    // ========================================
+
+    // C-x C-f - Find file (open file)
+    {
+        "key": "ctrl+x ctrl+f",
+        "command": "workbench.action.quickOpen"
+    },
+
+    // C-x C-s - Save file
+    {
+        "key": "ctrl+x ctrl+s",
+        "command": "workbench.action.files.save"
+    },
+
+    // C-x C-w - Write file (save as)
+    {
+        "key": "ctrl+x ctrl+w",
+        "command": "workbench.action.files.saveAs"
+    },
+
+    // C-x k - Kill buffer (close file)
+    {
+        "key": "ctrl+x k",
+        "command": "workbench.action.closeActiveEditor"
+    },
+
+    // C-x t - Create terminal editor
+    {
+        "key": "ctrl+x t",
+        "command": "workbench.action.createTerminalEditor",
+        "when": "!dired.open && editorTextFocus"
+    },
+
+    // C-x Shift+Ctrl+t - Create terminal editor at current file location
+    {
+        "key": "ctrl+x shift+ctrl+t",
+        "command": "openInIntegratedTerminal",
+        "when": "editorTextFocus"
+    },
+
+    // C-x C-p - Copy file path (mnemonic: "Control-x Control-path")
+    {
+        "key": "ctrl+x ctrl+p",
+        "command": "copyFilePath",
+        "when": "!dired.open"
+    },
+
+    // C-x b - Switch buffer (file)
+    {
+        "key": "ctrl+x b",
+        "command": "workbench.action.quickOpen"
+    },
+
+    // ========================================
+    // EMACS-STYLE NAVIGATION HISTORY
+    // ========================================
+
+    // C-x C-left - Go back to previous cursor position
+    {
+        "key": "ctrl+x ctrl+left",
+        "command": "workbench.action.navigateBack"
+    },
+
+    // C-x C-right - Go forward in cursor position history
+    {
+        "key": "ctrl+x ctrl+right",
+        "command": "workbench.action.navigateForward"
+    },
+
+    // ========================================
+    // EMACS-STYLE DIRED (FILE EXPLORER)
+    // ========================================
+
+    // // C-x d - Open dired (file explorer) - toggle sidebar
+    // {
+    //     "key": "ctrl+x d",
+    //     "command": "workbench.action.toggleSidebarVisibility"
+    // },
+
+    // // C-x d - When sidebar opens, focus explorer
+    // {
+    //     "key": "ctrl+x d",
+    //     "command": "workbench.view.explorer",
+    //     "when": "!sideBarVisible"
+    // },
+
+    // n - Next line in file explorer (Emacs dired style)
+    {
+        "key": "n",
+        "command": "list.focusDown",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+
+    // p - Previous line in file explorer (Emacs dired style)
+    {
+        "key": "p",
+        "command": "list.focusUp",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+
+    // RET - Open file (Emacs dired style)
+    {
+        "key": "enter",
+        "command": "list.select",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+
+    // ^ - Go to parent directory (Emacs dired style)
+    {
+        "key": "shift+6",
+        "command": "workbench.files.action.focusFilesExplorer",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+
+    // d - Mark for deletion (using delete key as proxy)
+    {
+        "key": "d",
+        "command": "deleteFile",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+
+    // r - Rename file (Emacs dired style)
+    {
+        "key": "r",
+        "command": "renameFile",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+
+    // c - Copy file (Emacs dired style)
+    {
+        "key": "c",
+        "command": "filesExplorer.copy",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+
+    // v - Paste (like "move" destination in dired)
+    {
+        "key": "v",
+        "command": "filesExplorer.paste",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+
+    // + - Create new file
+    {
+        "key": "shift+oem_plus",
+        "command": "explorer.newFile",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+
+    // ========================================
+    // EMACS-STYLE WINDOW OPERATIONS
+    // ========================================
+
+    // C-x 0 - Close current window (editor group)
+    {
+        "key": "ctrl+x 0",
+        "command": "workbench.action.closeEditorsInGroup"
+    },
+
+    // C-x 1 - Close other windows (keep only current group)
+    {
+        "key": "ctrl+x 1",
+        "command": "workbench.action.editorLayoutSingle"
+    },
+
+    // C-x 2 - Split window horizontally (below)
+    {
+        "key": "ctrl+x 2",
+        "command": "workbench.action.splitEditorDown"
+    },
+
+    // C-x 3 - Split window vertically (right)
+    {
+        "key": "ctrl+x 3",
+        "command": "workbench.action.splitEditorRight"
+    },
+
+    // C-x o - Other window (switch to next editor group)
+    {
+        "key": "ctrl+x o",
+        "command": "workbench.action.focusNextGroup"
+    },
+
+    // ========================================
+    // EDITOR GROUPS & NAVIGATION
+    // ========================================
+
+    // Maximize/restore editor group
+    {
+        "key": "alt+g",
+        "command": "workbench.action.toggleMaximizeEditorGroup"
+    },
+
+    // Focus previous editor group
+    {
+        "key": "alt+f",
+        "command": "workbench.action.focusPreviousGroup"
+    },
+
+    // Focus next/previous editor group
+    {
+        "key": "shift+alt+right",
+        "command": "workbench.action.focusNextGroup"
+    },
+    {
+        "key": "shift+alt+left",
+        "command": "workbench.action.focusPreviousGroup"
+    },
+
+    // ========================================
+    // EDITOR TABS & FILES
+    // ========================================
+
+    // Quick open recent editors (across all groups)
+    {
+        "key": "ctrl+tab",
+        "command": "workbench.action.quickOpenLeastRecentlyUsedEditor",
+        "when": "editorTextFocus && !terminalFocus"
+    },
+
+    // Quick open recent editors from terminal
+    {
+        "key": "ctrl+tab",
+        "command": "workbench.action.quickOpenLeastRecentlyUsedEditor",
+        "when": "terminalFocus"
+    },
+
+    // Quick open recent editors (within current group)
+    {
+        "key": "ctrl+shift+tab",
+        "command": "workbench.action.quickOpenLeastRecentlyUsedEditorInGroup",
+        "when": "editorTextFocus && !terminalFocus"
+    },
+
+    // Quick open recent editors from terminal (within group)
+    {
+        "key": "ctrl+shift+tab",
+        "command": "workbench.action.quickOpenLeastRecentlyUsedEditorInGroup",
+        "when": "terminalFocus"
+    },
+
+    // ========================================
+    // SEARCH & FIND
+    // ========================================
+
+    // Open search editor with selection (Alt+S)
+    {
+        "key": "alt+s",
+        "command": "runCommands",
+        "args": {
+            "commands": ["search.action.openEditor"]
+        }
+    },
+    // Open dired
+    {
+        "key": "ctrl+x d",
+        "command": "extension.dired.open"
+    },
+
+    // Open search editor with selection (Ctrl+Shift+F)
+    {
+        "key": "ctrl+shift+f",
+        "command": "runCommands",
+        "args": {
+            "commands": ["search.action.openEditor"]
+        }
+    },
+    // Select search result in search viewlet
+    {
+        "key": "ctrl+enter",
+        "command": "list.select",
+        "when": "searchViewletViewVisible && searchViewletFocused"
+    },
+
+    // Navigate search results in search editor
+    {
+        "key": "ctrl+down",
+        "command": "search.action.focusNextSearchResult",
+        "when": "inSearchEditor"
+    },
+    {
+        "key": "ctrl+up",
+        "command": "search.action.focusPreviousSearchResult",
+        "when": "inSearchEditor"
+    },
+
+    // // Go to location in search editor
+    {
+        "key": "ctrl+enter",
+        "command": "editor.action.goToLocation",
+        "when": "inSearchEditor"
+    },
+
+    // Open link in search editor
+    {
+        "key": "ctrl+enter",
+        "command": "editor.action.openLink",
+        "when": "inSearchEditor"
+    },
+
+    // ========================================
+    // CODE NAVIGATION & DEFINITIONS
+    // ========================================
+    // Move to start of line
+    {
+        "key": "ctrl+a",
+        "command": "cursorHome",
+        "when": "editorTextFocus"
+    },
+    // Move to end of line
+    {
+        "key": "ctrl+e",
+        "command": "cursorEnd",
+        "when": "editorTextFocus"
+    },
+
+    // Peek definition (Alt+H)
+    {
+        "key": "alt+h",
+        "command": "editor.action.peekDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+    },
+
+    // Go to definition (Shift+Alt+H)
+
+    {
+        "key": "shift+alt+h",
+        "command": "editor.action.revealDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus"
+    },
+    // {
+    //     "key": "shift+alt+f",
+    //     "command": "editor.action.revealDefinition",
+    //     "when": "editorHasDefinitionProvider && editorTextFocus"
+    // },
+    // Disable default peek definition (Alt+F12)
+    {
+        "key": "alt+f12",
+        "command": "-editor.action.peekDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+    },
+
+    // Disable default go to definition (F12)
+    {
+        "key": "f12",
+        "command": "-editor.action.revealDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus"
+    },
+
+    // Disable Alt+H conflicts
+    {
+        "key": "alt+h",
+        "command": "-testing.toggleTestingPeekHistory",
+        "when": "testing.isPeekVisible"
+    },
+    {
+        "key": "alt+h",
+        "command": "-editor.action.accessibilityHelpOpenHelpLink",
+        "when": "accessibilityHelpIsShown"
+    },
+
+    // Disable Shift+Alt+H conflicts
+    {
+        "key": "shift+alt+h",
+        "command": "-references-view.showCallHierarchy",
+        "when": "editorHasCallHierarchyProvider"
+    },
+    {
+        "key": "shift+alt+h",
+        "command": "-editor.showCallHierarchy",
+        "when": "editorHasCallHierarchyProvider && editorTextFocus && !inReferenceSearchEditor"
+    },
+    {
+        "key": "shift+alt+h",
+        "command": "-editor.showIncomingCalls",
+        "when": "callHierarchyVisible && callHierarchyDirection == 'outgoingCalls'"
+    },
+    {
+        "key": "shift+alt+h",
+        "command": "-editor.showOutgoingCalls",
+        "when": "callHierarchyVisible && callHierarchyDirection == 'incomingCalls'"
+    },
+    {
+        "key": "shift+alt+h",
+        "command": "-editor.showSubtypes",
+        "when": "typeHierarchyVisible && typeHierarchyDirection == 'supertypes'"
+    },
+    {
+        "key": "shift+alt+h",
+        "command": "-editor.showSupertypes",
+        "when": "typeHierarchyVisible && typeHierarchyDirection == 'subtypes'"
+    },
+
+    // ========================================
+    // EDITOR SCROLLING & LINE MOVEMENT
+    // ========================================
+    
+    // Move cursor line up
+    {
+        "key": "ctrl+p",
+        "command": "cursorUp",
+        "when": "editorTextFocus"
+    },
+    
+    // Move cursor line down
+    {
+        "key": "ctrl+n",
+        "command": "cursorDown",
+        "when": "editorTextFocus"
+    },
+    
+    // deactivate new file creation on Ctrl+N
+    {
+        "key": "-ctrl+n",
+        "command": "explorer.newFile",
+        "when": "editorTextFocus"
+    },
+    // new file 
+    {
+        "key": "ctrl+alt+n",
+        "command": "workbench.action.files.newUntitledFile",
+        "when": "editorTextFocus"
+    },
+
+    // Select all (Ctrl+A)
+    {
+        "key": "ctrl+x a",
+        "command": "editor.action.selectAll",
+        "when": "editorTextFocus"
+    },
+
+    // Move line/selection up (Shift+Ctrl+Alt+Up)
+    {
+        "key": "shift+ctrl+alt+up",
+        "command": "editor.action.moveLinesUpAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+
+    // Move line/selection down (Shift+Ctrl+Alt+Down)
+    {
+        "key": "shift+ctrl+alt+down",
+        "command": "editor.action.moveLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+
+    // Jump cursor by page (Ctrl+Alt+Up/Down)
+    {
+        "key": "ctrl+alt+up",
+        "command": "cursorPageUp",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+alt+down",
+        "command": "cursorPageDown",
+        "when": "editorTextFocus"
+    },
+    // Smart select
+    {
+        "key": "ctrl+shift+alt+right",
+        "command": "editor.action.smartSelect.grow",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+alt+left",
+        "command": "editor.action.smartSelect.shrink",
+        "when": "editorTextFocus"
+    },
+    // ========================================
+    // TERMINAL
+    // ========================================
+
+    // Toggle terminal visibility
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.terminal.toggleTerminal",
+        "when": "terminal.active"
+    },
+    // Focus terminal
+    {
+        "key": "ctrl+j",
+        "command": "terminal.focus"
+    },
+
+    // Toggle panel (terminal/output/problems)
+    {
+        "key": "ctrl+alt+j",
+        "command": "workbench.action.togglePanel"
+    },
+    // Terminal scrolling
+    {
+        "key": "ctrl+up",
+        "command": "workbench.action.terminal.scrollUp",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+down",
+        "command": "workbench.action.terminal.scrollDown",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+alt+up",
+        "command": "workbench.action.terminal.scrollUpPage",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+alt+down",
+        "command": "workbench.action.terminal.scrollDownPage",
+        "when": "terminalFocus"
+    },
+
+    // Disable default terminal toggle
+    {
+        "key": "ctrl+oem_3",
+        "command": "-workbench.action.terminal.toggleTerminal",
+        "when": "terminal.active"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "-workbench.action.togglePanel"
+    },
+
+    // ========================================
+    // WORKBENCH & UI
+    // ========================================
+
+    // Toggle sidebar visibility
+    {
+        "key": "ctrl+alt+p",
+        "command": "workbench.action.toggleSidebarVisibility"
+    },
+
+    // Increase Editor font size
+    {
+        "key": "ctrl+oem_plus",
+        "command": "editor.action.fontZoomIn",
+        "when": "editorTextFocus"
+    },
+    // Decrease Editor font size
+    {
+        "key": "ctrl+oem_minus",
+        "command": "editor.action.fontZoomOut",
+        "when": "editorTextFocus"
+    },
+
+    // Toggle minimap
+    {
+        "key": "ctrl+m ctrl+m",
+        "command": "editor.action.toggleMinimap"
+    },
+
+    // Disable default sidebar toggle (Ctrl+B)
+    {
+        "key": "ctrl+b",
+        "command": "-workbench.action.toggleSidebarVisibility"
+    },
+
+    // ========================================
+    // FILE OPERATIONS
+    // ========================================
+
+    // Copy file path
+    {
+        "key": "ctrl+shift+alt+c",
+        "command": "copyFilePath",
+        "when": "!editorFocus"
+    },
+    {
+        "key": "ctrl+shift+alt+c",
+        "command": "copyFilePath",
+        "when": "editorFocus"
+    },
+
+    // Disable default copy file path
+    {
+        "key": "shift+alt+c",
+        "command": "-copyFilePath",
+        "when": "!editorFocus"
+    },
+    {
+        "key": "shift+alt+c",
+        "command": "-copyFilePath",
+        "when": "editorFocus"
+    },
+
+    // ========================================
+    // EDITOR ACTIONS
+    // ========================================
+
+    // Swap character typo (custom command)
+    {
+        "key": "ctrl+m ctrl+s",
+        "command": "swapCharTypo",
+        "when": "editorTextFocus"
+    },
+
+    // ========================================
+    // DISABLED DEFAULTS
+    // ========================================
+
+    // Disable Copilot generate (conflicts with Ctrl+Enter)
+    {
+        "key": "ctrl+enter",
+        "command": "-github.copilot.generate",
+        "when": "editorTextFocus && github.copilot.activated && !commentEditorFocused"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "-workbench.action.closeActiveEditor"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "-workbench.action.closeGroup",
+        "when": "activeEditorGroupEmpty && multipleEditorGroups"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "-workbench.action.terminal.killEditor",
+        "when": "terminalEditorFocus && terminalFocus && terminalHasBeenCreated || terminalEditorFocus && terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "ctrl+shift+w",
+        "command": "-workbench.action.closeWindow"
+    },
+    {
+        "key": "ctrl+shift+up",
+        "command": "editor.action.insertCursorAbove",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+down",
+        "command": "editor.action.insertCursorBelow",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+numpad_add",
+        "command": "-workbench.action.zoomIn"
+    },
+    {
+        "key": "ctrl+numpad_subtract",
+        "command": "-workbench.action.zoomOut"
+    },
+    {
+        "key": "ctrl+shift+n",
+        "command": "-chatEditor.action.reject",
+        "when": "chatEdits.hasEditorModifications && chatEdits.isGlobalEditingSession && editorFocus && !chatEdits.isCurrentlyBeingModified || chatEdits.hasEditorModifications && chatEdits.isGlobalEditingSession && notebookEditorFocused && !chatEdits.isCurrentlyBeingModified"
+    },
+    {
+        "key": "ctrl+shift+n",
+        "command": "-workbench.action.newWindow"
+    },
+    {
+        "key": "ctrl+alt+n",
+        "command": "chatEditor.action.navigateNext",
+        "when": "chatEdits.hasEditorModifications && chatIsEnabled && editorFocus || chatEdits.hasEditorModifications && chatIsEnabled && notebookCellListFocused"
+    },
+    {
+        "key": "alt+f5",
+        "command": "-chatEditor.action.navigateNext",
+        "when": "chatEdits.hasEditorModifications && chatIsEnabled && editorFocus || chatEdits.hasEditorModifications && chatIsEnabled && notebookCellListFocused"
+    },
+    {
+        "key": "ctrl+alt+p",
+        "command": "chatEditor.action.navigatePrevious",
+        "when": "chatEdits.hasEditorModifications && chatIsEnabled && editorFocus || chatEdits.hasEditorModifications && chatIsEnabled && notebookCellListFocused"
+    },
+    {
+        "key": "shift+alt+f5",
+        "command": "-chatEditor.action.navigatePrevious",
+        "when": "chatEdits.hasEditorModifications && chatIsEnabled && editorFocus || chatEdits.hasEditorModifications && chatIsEnabled && notebookCellListFocused"
+    },
+    {
+        "key": "delete",
+        "command": "extension.dired.delete",
+        "when": "dired.open && editorTextFocus && !findWidgetVisible && !inQuickOpen"
+    },
+    {
+        "key": "ctrl+x shift+d",
+        "command": "-extension.dired.delete",
+        "when": "dired.open && editorTextFocus && !findWidgetVisible && !inQuickOpen"
+    },
+    {
+        "key": "ctrl+space",
+        "command": "editor.action.triggerSuggest",
+        "when": "!dired.open && editorTextFocus && editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+space",
+        "command": "-editor.action.triggerSuggest",
+        "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible"
+    }
+]
