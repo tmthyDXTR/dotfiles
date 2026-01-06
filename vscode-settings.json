@@ -4,8 +4,9 @@
     // ============================================
     "editor.accessibilitySupport": "off",
     // "editor.background": "#222222",
-    "editor.codeLensFontFaily": "'Ubuntu Mono', monospace",
+    // "editor.codeLensFontFaily": "'Ubuntu Mono', monospace",
     "editor.fontFamily": "'Ubuntu Mono', monospace",
+    // "editor.fontFamily": "'Comic Mono', monospace",
     // "editor.fontFamily": "'Modern DOS 8x16', monospace",
     "editor.fontWeight": "400",
     "editor.fontSize": 18,
@@ -256,7 +257,14 @@
             "approve": true,
             "matchCommandLine": true
         },
-        "npm test": true
+        "npm test": true,
+        "dotnet clean": true,
+        "dotnet build": true,
+        "dotnet run": true,
+        "/^python -m http\\.server 8000$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
     },
     // ============================================
     // GIT & SECURITY
@@ -301,5 +309,8 @@
     "workbench.colorTheme": "Visual Studio 2019 Dark",
     "chat.agent.maxRequests": 50,
     "chat.viewSessions.enabled": false,
-    "extensions.ignoreRecommendations": true
+    "extensions.ignoreRecommendations": true,
+    "gitlens.ai.model": "vscode",
+    "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+    "github.copilot.chat.anthropic.thinking.budgetTokens": 32000
 }

@@ -2,6 +2,11 @@ function unity-open {
     & "C:\Program Files\Unity\Hub\Editor\6000.2.10f1\Editor\Unity.exe" -projectPath $args
 }
 
+function npp {
+    & "C:\Program Files\npp\notepad++.exe" $args
+}
+
+
 # Add paths
 $pathsToAdd = @(
     "C:\Program Files\dotnet"
