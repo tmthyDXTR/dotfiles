@@ -22,8 +22,9 @@ $pathsToAdd = @(
     "C:\Users\Micha\AppData\Local\Python\pythoncore-3.14-64\Scripts"
     "C:\Users\Micha\AppData\Roaming\npm"
     "C:\Users\Micha\AppData\Roaming\Programs\Zero Install"
-    "C:\Users\Micha\dev\ffmpeg\ffmpeg-2025-12-22-git-c50e5c7778-essentials_build\bin"
-    "C:\Users\Micha\dev\ripgrep\ripgrep-15.1.0-x86_64-pc-windows-msvc\complete"
+    "C:\Users\Micha\3rd-party\ffmpeg\ffmpeg-2025-12-22-git-c50e5c7778-essentials_build\bin"
+    "C:\Users\Micha\3rd-party\ripgrep\ripgrep-15.1.0-x86_64-pc-windows-msvc\complete"
+	"C:\Users\Micha\3rd-party\winfetch"
 )
 
 foreach ($path in $pathsToAdd) {
