@@ -314,5 +314,10 @@
     "gitlens.ai.model": "vscode",
     "gitlens.ai.vscode.model": "copilot:gpt-4.1",
     "github.copilot.chat.anthropic.thinking.budgetTokens": 32000,
-    "todohighlight.isEnable": false
+    "todohighlight.isEnable": false,
+    "security.promptForLocalFileProtocolHandling": false,
+    "[php]": {
+        "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+    },
+    "gitlens.currentLine.enabled": false
 }

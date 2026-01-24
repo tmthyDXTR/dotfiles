@@ -6,6 +6,9 @@ function npp {
     & "C:\Program Files\npp\notepad++.exe" $args
 }
 
+function btop {
+	& "C:\Users\Micha\3rd-party\btop4win\btop4win.exe" $args
+}
 
 # Add paths
 $pathsToAdd = @(
@@ -24,7 +27,7 @@ $pathsToAdd = @(
     "C:\Users\Micha\AppData\Roaming\Programs\Zero Install"
     "C:\Users\Micha\3rd-party\ffmpeg\ffmpeg-2025-12-22-git-c50e5c7778-essentials_build\bin"
     "C:\Users\Micha\3rd-party\ripgrep\ripgrep-15.1.0-x86_64-pc-windows-msvc\complete"
-	"C:\Users\Micha\3rd-party\winfetch"
+    "C:\Users\Micha\3rd-party\winfetch"
 )
 
 foreach ($path in $pathsToAdd) {
